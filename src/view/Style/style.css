@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap");
+.non-used__title {
+  text-align: center;
+}
+.non-used .flags {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.non-used .flags__flag {
+  width: 70px;
+  height: 70px;
+  padding: 3px;
+  border-radius: 100%;
+  cursor: pointer;
+  border: 2px solid rgb(215, 215, 215);
+}
+.non-used .flags__flag--active {
+  border-color: rgb(170, 168, 168);
+}
+.non-used .flags__flag:hover {
+  background-color: transparent;
+}
+.non-used .flags__flag > img {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  font-family: "Open Sans", sans-serif;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,34 @@
+
+.non-used{
+    &__title{
+        text-align: center;
+        // margin-top: 30%;
+    }
+    .flags{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        $size: 70px;
+    
+        &__flag{
+            width: $size;
+            height: $size;
+            padding: 3px;
+            border-radius: 100%;
+            cursor: pointer;
+            border: 2px solid   rgb(215, 215, 215);
+            &--active{
+                border-color: rgb(170, 168, 168);
+            }
+            &:hover{
+                background-color: transparent;
+            }
+            & > img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+}
