@@ -31,8 +31,8 @@ export default function NonUsed() {
       opacity: 1,
       scale: 1,
       transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2
+        delayChildren: 0.2,
+        staggerChildren: 0.1
       }
     }
   };
@@ -44,16 +44,23 @@ export default function NonUsed() {
       opacity: 1
     }
   };
+  const buttonNext = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
+  };
   return (
     <div className="non-used">
-    <AnimatePresence >
+    <AnimatePresence mode='wait'>
     <motion.div
     className="non-used__title"
             key={language ? language : "empty"}
-            initial={{ x: 300, opacity: 0 }}
+            initial={{ x: 200, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -300, opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            exit={{ x: -200, opacity: 0 }}
+            transition={{ duration: 0.3 }}
           >
             {lang.title}
           </motion.div>
@@ -67,6 +74,9 @@ export default function NonUsed() {
   >
       {languageList.languagesList.map((language, key) => flag(language, key))}
     </motion.div>
+    <motion.button className={"non-used__next"} variants={buttonNext} initial="hidden" animate="visible" whileTap={{scale:1.05}}>
+      Dalej
+        </motion.button>
 
     </div>
   );

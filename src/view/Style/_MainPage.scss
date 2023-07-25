@@ -1,8 +1,24 @@
 
 .non-used{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     &__title{
         text-align: center;
-        // margin-top: 30%;
+        font-family: 'Lobster', cursive;
+        font-size: 30px;
+        margin-block-start: 10vh;
+        margin-block-end: 5vh;
+    }
+    &__next{
+        padding: 12px 46px;
+        background-color: transparent;
+        border: 1px solid black;
+        border-radius: 35px;
+        font-size: 14px;
+        width: max-content;
+        margin-block-start: 10vh;
     }
     .flags{
         display: flex;
