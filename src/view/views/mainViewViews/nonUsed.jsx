@@ -12,14 +12,7 @@ import languages from "../../translactions/mainTranslations.json"
 export default function NonUsed() {
     const [language, setLanguage] = useState(window.localStorage.getItem("lang") ? window.localStorage.getItem("lang") : "en")
     const lang = languages[language];
-    const navigate = useNavigate();
-    const {used} = useLoaderData();
-    useEffect(() => {  
-      if(used){
-        navigate('/');
-      }
-    });
-      const flag = (name, key) => {
+  const flag = (name, key) => {
     // Determine the flag image based on the language name
     const flagImage = name === 'pl' ? pl : en;
     return (
@@ -32,10 +25,7 @@ export default function NonUsed() {
     setLanguage(name)
     window.localStorage.setItem("lang", name);
   }
-  const nextButtonHandler = () =>{
-    window.localStorage.setItem("used", 1);
-    navigate('/')
-  }
+
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -86,7 +76,7 @@ export default function NonUsed() {
   >
       {languageList.languagesList.map((language, key) => flag(language, key))}
     </motion.div>
-    <motion.button className={"non-used__next"} onClick={nextButtonHandler} variants={buttonNext} initial="hidden" animate="visible" whileTap={{scale:1.05}}>
+    <motion.button className={"non-used__next"} variants={buttonNext} initial="hidden" animate="visible" whileTap={{scale:1.05}}>
       Dalej
         </motion.button>
 

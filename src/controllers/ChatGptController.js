@@ -1,5 +1,5 @@
 module.exports = {
-    get: async (req, res) => {
+    post: async (req, res) => {
         const { Configuration, OpenAIApi} = require("openai");
 
         const configuration = new Configuration({
@@ -13,7 +13,7 @@ module.exports = {
             "danie": "nazwa dania",
         "czas": "czas przygotowania",
         "sposób przygotowania": ["krok1","krok2"],
-        "przyrządy":["przyrzad1","przyzad2"],
+        "przyrządy":["przyrzad1","przyrzad2"],
         "składniki": [
         {
         "nazwa": "nazwa składnika",
@@ -35,5 +35,9 @@ module.exports = {
     else{
         res.status(500);
     }
+    },
+    get: async (req, res) =>{
+        console.log(req.body)
+        res.status(200).send({test:'osk'})
     }
 }
